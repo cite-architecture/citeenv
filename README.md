@@ -22,6 +22,9 @@ It applies URN twiddling across these structures according to the following logi
 - applies to object collection, image collection, analysis component of ORCA collection and citable relations
 
 
+## The Cite EXchange format (`.cex` files)
+
+
 ## Possible algorithm
 
 - at initialization, harvest URNs from all sources and group in two large lists:
