@@ -1,8 +1,10 @@
 # citeenv
 
-A cross-platform library for working with all citable resources in a unified environment.
+##What it is
 
-A CITE environment brings together the following citable resources and relations:
+`citeenv` is a cross-platform library for working with all citable resources in a unified environment.
+
+A CITE environment should bring together the following citable resources and relations:
 
 - citable texts (via the `ohco2` library)
 - citable objects (via the `citeobj` library)
@@ -11,22 +13,27 @@ A CITE environment brings together the following citable resources and relations
 - citable images
 
 
-It applies URN twiddling across these structures according to the following logic.
 
-### Single CTS URN
+##Current version: 1.0
 
-- applies to text collection, text component of ORCA Collection, and citable relations
+Status:  **active development**. [Release notes](releases.md)
 
-### Single Cite2Urn
+## License
 
-- applies to object collection, image collection, analysis component of ORCA collection and citable relations
+[GPL 3.0](https://opensource.org/licenses/gpl-3.0.html)
+
+## Using, building, testing
+
+`citeenv` compiled for both the JVM and ScalaJS using scala versions 2.10, 2.11 and 2.12.  Binaries for all platforms are available from jcenter.  If you are using sbt, include `Resolver.jcenterRepo`in your list of resolvers
+
+    resolvers += Resolver.jcenterRepo
+
+and  add this to your library dependencies:
+
+    "edu.holycross.shot.cite" %% "citeenv" % VERSION
+
+For maven, ivy or gradle equivalents, refer to <https://bintray.com/neelsmith/maven/ohco2>.
 
 
-## The Cite EXchange format (`.cex` files)
 
-
-## Possible algorithm
-
-- at initialization, harvest URNs from all sources and group in two large lists:
-    -  text URNs and where they came from (texts, ORCA, relations)
-    - object URNs and where they came from (objects, images, ORCA or relations)
+To build from source and test, use normal sbt commands (`compile`, `test` ...).
