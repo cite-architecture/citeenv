@@ -19,4 +19,4 @@ The formats of contents of each are:
 - `ctsdata`: two-column delimited text as imported by `Corpus` object
 - `ctscatalog`: delimited text as imported by `CtsCatalog`
 
-The others will be added subsequently
+The others will be added subsequently.
