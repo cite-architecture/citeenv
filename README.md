@@ -14,7 +14,7 @@ A CITE environment should bring together the following citable resources and rel
 
 
 
-##Current version: 1.0
+##Current version: 1.1
 
 Status:  **active development**. [Release notes](releases.md)
 

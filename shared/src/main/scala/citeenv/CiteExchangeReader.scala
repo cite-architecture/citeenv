@@ -2,6 +2,10 @@ package edu.holycross.shot.citeenv
 
 import edu.holycross.shot.cite._
 import edu.holycross.shot.ohco2._
+
+import scala.scalajs.js
+import js.annotation.JSExport
+
 //import edu.holycross.shot.citeobj._
 
 
@@ -12,7 +16,7 @@ import edu.holycross.shot.ohco2._
 * @param cexString Data in CEX format.
 * @param columnDelimiter String value used to separate columns in simple text tables throughout the file.
 */
-case class CiteExchangeReader(cexString: String, columnDelimiter: String = "\t") {
+@JSExport  case class CiteExchangeReader(cexString: String, columnDelimiter: String = "\t") {
   def raw = cexString.split("#!").toVector.filter(_.nonEmpty)
   def sections = raw.map(_.split("\n")).map(v => (v.head,v.drop(1).toVector))
 
@@ -22,7 +26,6 @@ case class CiteExchangeReader(cexString: String, columnDelimiter: String = "\t")
   def textRepository: TextRepository = {
     val ctsCatalogLines = sections.filter(_._1 == "ctscatalog").flatMap(_._2)
 
-    println("CAT: " + ctsCatalogLines.mkString("\n"))
     val catalog = Catalog(ctsCatalogLines.mkString("\n"),columnDelimiter)
     val ctsDataLines = sections.filter(_._1 == "ctsdata").flatMap(_._2)
     val corpus = Corpus(ctsDataLines.mkString("\n"),columnDelimiter)
