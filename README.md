@@ -1,6 +1,6 @@
 # citeenv
 
-##What it is
+## What it is
 
 `citeenv` is a cross-platform library for working with all citable resources in a unified environment.
 
@@ -14,7 +14,7 @@ A CITE environment should bring together the following citable resources and rel
 
 
 
-##Current version: 1.1
+## Current version: 1.1
 
 Status:  **active development**. [Release notes](releases.md)
 
